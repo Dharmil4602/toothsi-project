@@ -3,7 +3,7 @@ import React from "react";
 function Header(props) {
   return (
     <>
-      <div className="flex mx-auto p-3 bg-gray-300 justify-between">
+      <div className="flex mx-auto p-3 bg-gray-300 justify-between sticky">
         {/* Main Heading */}
         <div className="heading mr-5">
           <h1 className="text-4xl cursor-pointer" onClick={() => props.setShow(true)}>Products</h1>

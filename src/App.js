@@ -11,6 +11,9 @@ function App() {
   const handleClick = (item) => {
     if (cart.indexOf(item) !== -1) return;
     setCart([...cart, item]);
+    // Changing the number of cart
+    document.querySelector(".cart span").innerHTML = cart.length;
+    
   };
 
   const handleChange = (item, d) => {
