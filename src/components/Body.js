@@ -6,7 +6,7 @@ function Body() {
   return (
     <section>
       {products.map((item) => (
-        <Card />
+        <Card key={products.id} item={item}/>
       ))}
     </section>
   );
