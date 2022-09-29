@@ -1,12 +1,12 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
   return (
     <>
       <div className="flex mx-auto p-3 bg-gray-300 justify-between">
         {/* Main Heading */}
         <div className="heading mr-5">
-          <h1 className="text-4xl cursor-pointer">Products</h1>
+          <h1 className="text-4xl cursor-pointer" onClick={() => props.setShow(true)}>Products</h1>
         </div>
 
         {/* Search Box */}
@@ -48,11 +48,13 @@ function Header() {
         <div className="cart">
           <button className="rounded-md p-2 text-white">
             <img
-              className="h-8 w-8"
+              className="h-9 w-9"
               src="./images/shopping-cart.png"
               alt="shopping-cart"
+              onClick={() => props.setShow(false)}
             />
           </button>
+          <span className="bg-red-500 text-white font-bold px-2 rounded-md w-fit absolute right-2 top-1">0</span>
         </div>
       </div>
     </>
