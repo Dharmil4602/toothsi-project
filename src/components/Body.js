@@ -26,15 +26,15 @@ function Body(props) {
 
         {/* Mapping Each Product */}
         {products.map((item, i) => (
-          <tr key={i} className="text-center">
+          <tr key={i} className="text-center font-bold">
             <td>{item.id}</td>
-            <td>
+            <td className="flex justify-center">
               <img className="h-40 w-40" src={item.image} alt="product" />
             </td>
             <td>{item.name}</td>
             <td>{item.color}</td>
             <td>{item.stock}</td>
-            <td>{item.price}</td>
+            <td>${item.price}</td>
             <td>
               <Button variant="outline-primary" onClick={props.handleClick}>Add To Cart</Button>{" "}
             </td>
