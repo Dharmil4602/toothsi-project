@@ -12,19 +12,19 @@ function Header() {
         {/* Search Box */}
         <div className="search_box">
           <input
-            className="w-96 h-10"
+            className="w-96 h-10 p-3"
             type="text"
             placeholder="Search For Products"
           />
-          <button className="mr-3">Search</button>
+          <button className="mr-3 bg-red-200 p-2 font-bold">Search</button>
         </div>
 
         {/* Dropdownlist */}
         <div className="dropdown_list flex">
           <div className="category-dropdown">
-            <label>
-              Category
-              <select className="rounded-md p-2">
+            <label className="mr-5">
+              <strong>Category:</strong>
+              <select className="rounded-md p-2 mx-3">
                 <option value="fruit">Headphones</option>
                 <option value="vegetable">Camera</option>
                 <option value="meat">Mobile</option>
@@ -34,8 +34,8 @@ function Header() {
 
           <div className="size-dropdown">
             <label>
-              Size
-              <select className="rounded-md p-2">
+              <strong>Size:</strong>
+              <select className="rounded-md p-2 mx-3">
                 <option value="fruit">Fruit</option>
                 <option value="vegetable">Vegetable</option>
                 <option value="meat">Meat</option>
@@ -47,9 +47,13 @@ function Header() {
         {/* Cart */}
         <div className="cart">
           <button className="rounded-md p-2 text-white">
-            <img className="h-8 w-8" src="./images/shopping-cart.png" alt="shopping-cart" />
+            <img
+              className="h-8 w-8"
+              src="./images/shopping-cart.png"
+              alt="shopping-cart"
+            />
           </button>
-          </div>
+        </div>
       </div>
     </>
   );
