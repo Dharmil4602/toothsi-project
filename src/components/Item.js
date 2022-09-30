@@ -27,8 +27,8 @@ function Item() {
 
   return (
     <>
-      <Table className="flex justify-around">
-        <tbody className="align-middle">
+      <Table className="flex justify-start">
+        <tbody className="align-middle mx-20">
           <thead>
             <tr className="text-center">
               <th>Image</th>
@@ -51,7 +51,7 @@ function Item() {
                   <button onClick={() => handleDecrement(item.id)}>
                     <i className="uil uil-minus"></i>
                   </button>
-                  <div className="quantity mx-4">{item.quantity}</div>
+                  <div className="quantity mx-2">{item.quantity}</div>
                   <button onClick={() => handleIncrement(item.id)}>
                     <i className="uil uil-plus"></i>
                   </button>
@@ -64,7 +64,7 @@ function Item() {
             </tr>
           ))}
         </tbody>
-        <FinalCheckout />
+        <FinalCheckout className="ml-10" />
       </Table>
     </>
   );
