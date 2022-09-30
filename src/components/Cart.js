@@ -5,10 +5,7 @@ import Item from './Item'
 function Cart() {
   return (
     <div>
-      <h1>Shopping Cart</h1>
-      <p>
-        You Have <span>4</span> Items In Cart
-      </p>
+      <h1 className='mb-4'>Shopping Cart:</h1>
         <Item />
     </div>
   );

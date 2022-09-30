@@ -36,9 +36,9 @@ function Header(props) {
             <label>
               <strong>Size:</strong>
               <select className="rounded-md p-2 mx-3">
-                <option value="fruit">Fruit</option>
-                <option value="vegetable">Vegetable</option>
-                <option value="meat">Meat</option>
+                <option value="fruit">Small</option>
+                <option value="vegetable">Medium</option>
+                <option value="meat">Large</option>
               </select>
             </label>
           </div>
