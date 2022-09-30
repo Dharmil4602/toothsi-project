@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
-import products from '../Products'
+import React from 'react'
 import Item from './Item'
-import Table from "react-bootstrap/Table";
 
 
 function Cart() {
-  const [item, setItem] = useState(products)
   return (
     <div>
       <h1>Shopping Cart</h1>

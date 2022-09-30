@@ -27,8 +27,8 @@ function Item() {
 
   return (
     <>
-      <Table className="flex justify-start">
-        <tbody className="align-middle mx-20">
+      <Table className="flex justify-start ">
+        <tbody className="align-middle mx-20 ">
           <thead>
             <tr className="text-center">
               <th>Image</th>
