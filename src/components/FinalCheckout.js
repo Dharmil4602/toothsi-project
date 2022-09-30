@@ -1,6 +1,10 @@
 import React from "react";
 
 function FinalCheckout(props) {
+
+    const checkoutButton = () => {
+        alert("Thank you for shopping with us!");
+    }
   return (
     <div>
       <div className="bg-amber-300 h-[330px] w-[450px] rounded-lg mx-10">
@@ -16,7 +20,7 @@ function FinalCheckout(props) {
         </div>
         <hr />
         <div className="checkout-button">
-          <button className="bg-blue-500 rounded-lg p-2 text-white font-bold flex m-auto">
+          <button onClick={checkoutButton} className="bg-blue-500 rounded-lg p-2 text-white font-bold flex m-auto">
             Proceed To Checkout
           </button>
         </div>
