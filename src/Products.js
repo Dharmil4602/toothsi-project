@@ -6,6 +6,7 @@ const products = [
     color: "red",
     price: 89.99, 
     stock: 3,
+    quantity: 1
   },
 
   {
@@ -15,6 +16,7 @@ const products = [
     color: "red",
     price: 89.99,
     stock: 3,
+    quantity: 1
   },
 
   {
@@ -24,6 +26,8 @@ const products = [
     color: "red",
     price: 89.99,
     stock: 3,
+    quantity: 1
+
   },
 
   {
@@ -33,6 +37,7 @@ const products = [
     color: "red",
     price: 89.99,
     stock: 3,
+    quantity: 1
   },
 
   {
@@ -42,6 +47,7 @@ const products = [
     color: "red",
     price: 89.99,
     stock: 3,
+    quantity: 1
   },
 
   {
@@ -51,6 +57,7 @@ const products = [
     color: "red",
     price: 89.99,
     stock: 3,
+    quantity: 1
   },
 ];
 
