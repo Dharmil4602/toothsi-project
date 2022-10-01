@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import Popup from "./Popup";
 
 function FinalCheckout(props) {
+  // Popup Function
+  const [showPopup, setShowPopup] = useState(false);
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
 
-    const checkoutButton = () => {
-        alert("Thank you for shopping with us!");
-    }
+  // const checkoutButton = () => {
+  //     alert("Thank you for shopping with us!");
+  // }
   return (
     <div>
       <div className="bg-amber-300 h-[330px] w-[450px] rounded-lg mx-10">
@@ -20,9 +26,22 @@ function FinalCheckout(props) {
         </div>
         <hr />
         <div className="checkout-button">
-          <button onClick={checkoutButton} className="bg-blue-500 rounded-lg p-2 text-white font-bold flex m-auto">
+          <button
+            onClick={togglePopup}
+            className="bg-blue-500 rounded-lg p-2 text-white font-bold flex m-auto"
+          >
             Proceed To Checkout
           </button>
+          {showPopup && (
+            <Popup
+              content={
+                <>
+                  <b>Thank You For Shopping</b>
+                </>
+              }
+              handleClose={togglePopup}
+            />
+          )}
         </div>
       </div>
     </div>
