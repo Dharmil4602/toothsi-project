@@ -61,31 +61,6 @@ function Item() {
               <th>Delete</th>
             </tr>
           </thead>
-          {/* {item.map((item, i) => (
-              <tr key={i} className="font-bold">
-                <td className="flex justify-center">
-                  <img className="h-20 w-20" src={item.image} alt="product" />
-                </td>
-                <td className="text-center">{item.name}</td>
-                <td className="text-center">${item.price}</td>
-                <td className="quantity text-center">
-                  <div className="flex justify-center">
-                    <button onClick={() => handleDecrement(item.id)}>
-                      <i className="uil uil-minus"></i>
-                    </button>
-                    <div className="quantity mx-2">{item.quantity}</div>
-                    <button onClick={() => handleIncrement(item.id)}>
-                      <i className="uil uil-plus"></i>
-                    </button>
-                  </div>
-                </td>
-                <td className="subTotal text-center">Subtotal</td>
-                <td className="delete text-center">
-                  <i className="fa fa-trash" aria-hidden="true"></i>
-                </td>
-              </tr>
-            ))} */}
-
           {item.map((item, i) => (
             <tr
               key={i}
@@ -120,35 +95,6 @@ function Item() {
               </td>
             </tr>
           ))}
-
-          {/* {item.map((item) => (
-            <TableRow
-              key={item.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              {item.name.length > 40 ? (
-                <td>{item.name.substring(0, 40)}...</td>
-              ) : (
-                <td>{item.name}</td>
-              )}
-              <TableCell>
-                <img className="h-20 w-20" src={item.image} alt="product" />
-              </TableCell>
-              <TableCell align="right">${item.price}</TableCell>
-              <TableCell>
-                <div>
-                  <button onClick={() => handleDecrement(item.id)}>-</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => handleIncrement(item.id)}>+</button>
-                </div>
-              </TableCell>
-              <TableCell align="right">${item.price * item.quantity}</TableCell>
-              <TableCell align="right">
-                <i className="fa fa-trash" aria-hidden="true"></i>
-              </TableCell>
-            </TableRow>
-          ))} */}
-          {/* </tbody> */}
         </Table>
         <FinalCheckout setTotal={total} />
       </div>
