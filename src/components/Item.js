@@ -1,51 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import products from "../Products";
+import Products from "../Products";
 import FinalCheckout from "./FinalCheckout";
 
 function Item() {
+  const [item, setItem] = useState(Products);
 
-    const [item, setItem] = useState(products)
+  const handleIncrement = (item_id) => {
+    setItem((item) =>
+      item.map((item) =>
+        item_id === item.id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
 
-    const handleIncrement = (item_id) => {
-        setItem((item) =>
-          item.map((item) =>
-            item_id === item.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item
-          )
-        );
-    };
+  const handleDecrement = (item_id) => {
+    setItem((item) =>
+      item.map((item) =>
+        item_id === item.id
+          ? { ...item, quantity: item.quantity - (item.quantity > 1 ? 1 : 0) }
+          : item
+      )
+    );
+  };
 
-
-    const handleDecrement = (item_id) => {
-        setItem(item => 
-            item.map(item => item_id === item.id ? {...item, quantity: item.quantity - (item.quantity > 1 ? 1:0)} : item)
-        );
+  const removeProduct = (id) => {
+    if (window.confirm("Do you want to delete this product?")) {
+      item.forEach((item, index) => {
+        if (item._id === id) {
+          item.splice(index, 1);
+        }
+      });
+      setItem([...item]);
     }
+  };
 
-    const removeProduct = (id) => {
-      if (window.confirm("Do you want to delete this product?")) {
-        item.forEach((item, index) => {
-          if (item._id === id) {
-            item.splice(index, 1);
-          }
-        });
-        setItem([...item]);
-      }
+  // Setting Total
+  const [total, setTotal] = useState(0);
+  useEffect(() => {
+    const totalCost = () => {
+      let total = item.reduce((prev, item) => {
+        return prev + item.price * item.quantity;
+      }, 0);
+      setTotal(total);
     };
-
-    // Setting Total
-    const [total, setTotal] = useState(0);
-    useEffect(() => {
-      const totalCost = () => {
-        let total = item.reduce((prev, item) => {
-          return prev + item.price * item.quantity;
-        }, 0);
-        setTotal(total);
-      };
-      totalCost();
-    }, [item]);
+    totalCost();
+  }, [item]);
   return (
     <>
       <div className="flex justify-evenly">
@@ -108,9 +108,15 @@ function Item() {
                   </button>
                 </div>
               </td>
-              <td className="subTotal text-center">${item.price * item.quantity}</td>
+              <td className="subTotal text-center">
+                ${item.price * item.quantity}
+              </td>
               <td className="delete text-center">
-                <i onClick={() => removeProduct(item.id)} className="fa fa-trash" aria-hidden="true"></i>
+                <i
+                  onClick={() => removeProduct(item.id)}
+                  className="fa fa-trash"
+                  aria-hidden="true"
+                ></i>
               </td>
             </tr>
           ))}
@@ -144,7 +150,7 @@ function Item() {
           ))} */}
           {/* </tbody> */}
         </Table>
-        <FinalCheckout setTotal={total}/>
+        <FinalCheckout setTotal={total} />
       </div>
     </>
   );

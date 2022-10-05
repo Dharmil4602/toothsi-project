@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import data from "../Products";
 
 function Header(props) {
+
+    const [handleSearch, setHandleSearch] = useState("");
+
+    const [search, setSearch] = useState("");
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setSearch(handleSearch);
+      setHandleSearch("");
+    };
+
+  useEffect(() => {}, [search]);
+
+
   return (
     <>
       <div className="flex mx-auto p-3 bg-gray-300 justify-between sticky ">
@@ -20,8 +34,33 @@ function Header(props) {
             className="w-96 h-10 p-3"
             type="text"
             placeholder="Search For Products"
+            onChange={(e) => setHandleSearch(e.target.value)}
+            value={handleSearch}
           />
-          <button className="mr-3 bg-red-200 p-2 font-bold">Search</button>
+          <button className="mr-3 bg-red-200 p-2 font-bold" onSubmit={handleSubmit}>Search</button>
+          {/* <div className="dropdown"> */}
+            {data
+              .filter((item) => {
+                const searchTerm = handleSearch.toLowerCase();
+                const fullName = item.name.toLowerCase();
+
+                return (
+                  searchTerm &&
+                  fullName.startsWith(searchTerm) &&
+                  fullName !== searchTerm
+                );
+              })
+              .map((item) => (
+                <div
+                  onClick={() => setHandleSearch(item.name)}
+                  className="dropdown-row"
+                  // pass all the parameters to the function
+                  key={item.id}
+                >
+                  {item.name}
+                </div>
+              ))}
+          {/* </div> */}
         </div>
 
         {/* Dropdownlist */}

@@ -2,7 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 // import Card from './Card'
-import products from "../Products";
+import Products from "../Products";
 
 function Body(props) {
 
@@ -25,7 +25,7 @@ function Body(props) {
         </thead>
 
         {/* Mapping Each Product */}
-        {products.map((item, i) => (
+        {Products.map((item, i) => (
           <tr key={i} className="text-center font-bold">
             <td>{item.id}</td>
             <td className="flex justify-center">

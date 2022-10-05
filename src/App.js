@@ -13,7 +13,6 @@ function App() {
     setCart([...cart, item]);
     // Changing the number of cart
     document.querySelector(".cart span").innerHTML = cart.length;
-    
   };
 
   const handleChange = (item, d) => {
@@ -27,7 +26,7 @@ function App() {
 
   return (
     <div>
-      <Header setShow={setShow} />
+      <Header setShow={setShow}/>
       {show ? (
         <Body handleClick={handleClick} />
       ) : (
